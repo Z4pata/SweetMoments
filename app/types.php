@@ -4,8 +4,8 @@ namespace App;
 
 enum types : string
 {
-    case Pie = 'P';
-    case Jelly = 'J';
-    case Dessert = 'D';
-    case Cookie = 'C';
+    case Cake = 'cake';
+    case Jelly = 'jelly';
+    case Dessert = 'dessert';
+    case Cookie = 'cookie';
 }
