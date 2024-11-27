@@ -48,8 +48,7 @@ class ProductSeeder extends Seeder
         {
             Product::firstOrCreate(
                 ['name' => $product['name']], 
-                ['type' => $product['type']], 
-                ['size' => $product['size']]
+                ['type' => $product['type'], 'size' => $product['size']]
             );
         };
     }
