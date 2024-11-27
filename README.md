@@ -1,3 +1,104 @@
+
+# Order Management for Local Pastry Shop - "Sweet Moments"
+
+This project is a monolith developed in **PHP Laravel** using the **Breeze Starter Kit** and **Blade** for the frontend. It is designed to solve the order management problems faced by the pastry shop "Sweet Moments." The system aims to improve order accuracy, optimize staff time, and provide better tracking for regular customers.
+
+## Features
+
+### Main Features
+1. **Order Management:**
+   - Register new orders with details such as:
+     - Selected products.
+     - Size, ingredients, and customizations.
+     - Delivery date and time.
+   - Update orders in case of changes.
+   - View pending and completed orders.
+   
+2. **Active Order Tracking:**
+   - View the status of all active orders.
+   - Sort orders by priority or delivery date.
+
+3. **Customer Management:**
+   - Register basic customer information.
+   - Save preferences or order history for regular customers.
+
+4. **Product Management:**
+   - Create and manage available products:
+     - Cakes, desserts, and more.
+     - Ingredients, sizes, and prices.
+   - Display products in an interactive catalog.
+
+5. **Authentication and Authorization (provided by Breeze):**
+   - User registration.
+   - Secure login.
+   - Password management (recovery and reset).
+
+## Technologies Used
+- **Backend:** PHP 8.2, Laravel 11.31
+- **Frontend:** Blade Templates (Laravel Breeze)
+- **Database:** MySQL
+- **Authentication:** Breeze Starter Kit (based on Laravel Sanctum)
+
+## Installation
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/Z4pata/SweetMoments.git
+   cd SweetMoments
+   ```
+
+2. Install PHP dependencies:
+   ```bash
+   composer install
+   ```
+
+3. Install Node.js dependencies:
+   ```bash
+   npm install && npm run dev
+   ```
+
+4. Configure the `.env` file:
+   - Copy the `.env.example` file and rename it to `.env`.
+   
+   ```bash
+   cp .env.example .env
+   ```
+
+   - Set the database credentials and other necessary parameters.
+
+5. Run migrations to create the database tables:
+   ```bash
+   php artisan migrate
+   ```
+
+6. generate the Application key:
+   ```bash
+   php artisan key:generate
+   ```
+
+7. Start the development server:
+   ```bash
+   php artisan serve
+   ```
+
+## Usage
+1. Access the system at `http://localhost:8000`.
+2. Register a new user or log in.
+3. Start managing orders, customers, and products from the main dashboard.
+
+## Contribution
+1. Fork the project.
+2. Create a branch with your changes:
+   ```bash
+   git checkout -b my-feature
+   ```
+3. Submit a pull request describing your changes.
+
+<br>
+<br>
+<hr>
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
