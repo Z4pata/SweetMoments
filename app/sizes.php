@@ -4,6 +4,7 @@ namespace App;
 
 enum sizes: string
 {
+    case NoSize = 'no-size';
     case Small = 'small';
     case Medium = 'medium';
     case Big = 'big';
