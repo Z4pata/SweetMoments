@@ -12,7 +12,7 @@ class IngredientProduct extends Model
     |--------------------------------------------------------------------------
     */
 
-    // protected $table = 'categories';
+    protected $table = 'ingredient_product';
     // protected $primaryKey = 'id';
     public $timestamps = false;
     // protected $guarded = [];
