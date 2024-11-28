@@ -30,7 +30,9 @@ class ProductRequest extends FormRequest
         return [
             'name' => ['required','string','max:255', Rule::unique(Product::class)->ignore($this->id)],
             'type' => ['required', 'string', new Enum(types::class)],
-            'size' => ['required', 'string', new Enum(sizes::class)]
+            'size' => ['required', 'string', new Enum(sizes::class)],
+            'ingredients' => ['array', 'max:3'],
+            'ingredients.*' => ['exists:ingredients,id'],
         ];
     }
 
@@ -42,6 +44,7 @@ class ProductRequest extends FormRequest
             'name.max' => 'The name must be less than 255 characters',
             'type.required' => 'The field is required',
             'size.required' => 'The field is required',
+            'ingrediens.array' => 'The field must be an array',
         ];
 
     }

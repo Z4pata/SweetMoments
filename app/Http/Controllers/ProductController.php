@@ -30,7 +30,18 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        Product::create($request->validated());
+        $validated = $request->validated();
+
+        $product =Product::create([
+            'name' => $validated->name,
+            'type' => $validated->type,
+            'size' => $validated->size
+        ]);
+
+        // if (!empty($validated->ingredients)) 
+        // {
+        //     $product->ingredients()attach($validated->ingredients);
+        // }
 
         return redirect()->route('products.index')->with('success', 'Product created successfully.');
     }
