@@ -53,6 +53,16 @@ class IngredientProduct extends Model
     |--------------------------------------------------------------------------
     */
 
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
+
+    public function ingredient()
+    {
+        return $this->belongsTo(Ingredient::class);
+    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES

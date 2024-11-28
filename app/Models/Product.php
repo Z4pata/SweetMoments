@@ -71,10 +71,10 @@ class Product extends Model
     |--------------------------------------------------------------------------
     */
 
-    // public function ingredients()
-    // {
-    //     return $this->hasMany(ingredient_product::class);
-    // }
+    public function ingredients()
+    {
+        return $this->hasMany(IngredientProduct::class);
+    }
 
     /*
     |--------------------------------------------------------------------------

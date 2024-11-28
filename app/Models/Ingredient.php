@@ -70,6 +70,11 @@ class Ingredient extends Model
     |--------------------------------------------------------------------------
     */
 
+    public function products()
+    {
+        return $this->hasMany(IngredientProduct::class);
+    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES
