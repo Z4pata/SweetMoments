@@ -13,9 +13,9 @@ class SizeSelect extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct($sizes)
+    public function __construct()
     {
-        $this->$sizes = sizes::cases();
+        $this->sizes = sizes::cases();
     }
 
     /**

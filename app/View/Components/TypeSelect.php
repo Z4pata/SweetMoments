@@ -13,9 +13,9 @@ class TypeSelect extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct($types)
+    public function __construct()
     {
-        $this->$types = types::cases();
+        $this->types = types::cases();
     }
 
     /**

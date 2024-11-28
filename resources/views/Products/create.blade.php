@@ -17,9 +17,9 @@
                                 @enderror
                             </div>
 
-                            <x-type-select types='types'></x-type-select>
+                            <x-type-select></x-type-select>
 
-                            <x-size-select sizes='sizes'></x-size-select>
+                            <x-size-select></x-size-select>
 
                             @for ($i = 1; $i <= 3; $i++)
                                 <div>
