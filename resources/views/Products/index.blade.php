@@ -30,7 +30,7 @@
                                             <td class="py-2 px-4 border-b">{{ $product->size }}</td>
                                             <td class="py-2 px-4 border-b">
                                                 <a href="{{ route('products.show', $product->id) }}" class="bg-indigo-400 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                                                    More
+                                                    Show More
                                                 </a>
                                             </td>
                                         </tr>
