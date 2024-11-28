@@ -6,7 +6,7 @@
                     <div class="flex justify-between items-center mb-6">
                         <h1 class="text-2xl font-semibold">Products</h1>
                         <a href="{{ route('products.create') }}"
-                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
                             Create Product
                         </a>
                     </div>
@@ -19,6 +19,7 @@
                                         <th class="py-2 px-4 border-b text-left">Name</th>
                                         <th class="py-2 px-4 border-b text-left">Type</th>
                                         <th class="py-2 px-4 border-b text-left">Size</th>
+                                        <th class="py-2 px-4 border-b text-left"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -27,6 +28,11 @@
                                             <td class="py-2 px-4 border-b">{{ $product->name }}</td>
                                             <td class="py-2 px-4 border-b">{{ $product->type }}</td>
                                             <td class="py-2 px-4 border-b">{{ $product->size }}</td>
+                                            <td class="py-2 px-4 border-b">
+                                                <a href="{{ route('products.show', $product->id) }}" class="bg-indigo-400 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                                                    More
+                                                </a>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
