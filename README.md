@@ -1,5 +1,5 @@
 
-<h1 style="justify-content=center align-items=center">Sweet Moments</h1>
+<h1 align="center">Sweet Moments</h1>
 
 This project is a monolith developed in **PHP Laravel** using the **Breeze Starter Kit** and **Blade** for the frontend. It is designed to solve the order management problems faced by the pastry shop "Sweet Moments." The system aims to improve order accuracy, optimize staff time, and provide better tracking for regular customers.
 
