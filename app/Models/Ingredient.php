@@ -72,7 +72,7 @@ class Ingredient extends Model
 
     public function products()
     {
-        return $this->hasMany(IngredientProduct::class);
+        return $this->belongsToMany(Product::class);
     }
 
     /*

@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
+use App\Models\Ingredient;
 use App\Models\Product;
+use App\sizes;
+use App\types;
 use Illuminate\Http\Request;
+
+use function Laravel\Prompts\error;
 
 class ProductController extends Controller
 {
@@ -22,7 +27,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('Products.create');
+        $ingredients = Ingredient::all();
+        $types = types::cases();
+
+        return view('Products.create', compact('ingredients', 'types'));
     }
 
     /**
@@ -33,15 +41,17 @@ class ProductController extends Controller
         $validated = $request->validated();
 
         $product =Product::create([
-            'name' => $validated->name,
-            'type' => $validated->type,
-            'size' => $validated->size
+            'name' => $validated['name'],
+            'type' => $validated['type'],
+            'size' => $validated['size']
         ]);
 
-        // if (!empty($validated->ingredients)) 
-        // {
-        //     $product->ingredients()attach($validated->ingredients);
-        // }
+        if (empty($validated['ingredients'])) 
+        {
+            throw new \Exception('there are not ingredients in the array');
+        }
+        
+        $product->ingredients()->attach($validated['ingredients']);
 
         return redirect()->route('products.index')->with('success', 'Product created successfully.');
     }

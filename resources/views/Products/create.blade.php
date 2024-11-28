@@ -17,39 +17,30 @@
                                 @enderror
                             </div>
 
-                            <div>
-                                <label for="type" class="block text-sm font-medium text-gray-700">Type</label>
-                                <select name="type" id="type" required
-                                    class="mt-1 block w-full max-w-xs mx-auto rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                                    <option value="">Select a product type</option>
-                                    @foreach (\App\types::cases() as $type)
-                                        <option value="{{ $type->value }}"
-                                            {{ old('type') == $type->value ? 'selected' : '' }}>
-                                            {{ $type->name }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                                @error('type')
-                                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                                @enderror
-                            </div>
+                            <x-type-select types='types'></x-type-select>
 
-                            <div>
-                                <label for="size" class="block text-sm font-medium text-gray-700">Size</label>
-                                <select name="size" id="size" required
-                                    class="mt-1 block w-full max-w-xs mx-auto rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                                    <option value="">Select a size</option>
-                                    @foreach (\App\sizes::cases() as $size)
-                                        <option value="{{ $size->value }}"
-                                            {{ old('size') == $size->value ? 'selected' : '' }}>
-                                            {{ $size->name }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                                @error('size')
-                                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                                @enderror
-                            </div>
+                            <x-size-select sizes='sizes'></x-size-select>
+
+                            @for ($i = 1; $i <= 3; $i++)
+                                <div>
+                                    <label for="ingredient_{{ $i }}"
+                                        class="block text-sm font-medium text-gray-700">Ingredient
+                                        {{ $i }}</label>
+                                    <select name="ingredients[]" id="ingredient_{{ $i }}"
+                                        class="mt-1 block w-full max-w-xs mx-auto rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                        <option value="">Select an ingredient</option>
+                                        @foreach ($ingredients as $ingredient)
+                                            <option value="{{ $ingredient->id }}"
+                                                {{ old('ingredients') && in_array($ingredient->id, old('ingredients')) ? 'selected' : '' }}>
+                                                {{ $ingredient->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    @error('ingredients.' . ($i - 1))
+                                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                            @endfor
 
                             <div class="flex items-center justify-center mt-4">
                                 <button type="submit"
