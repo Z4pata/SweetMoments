@@ -23,7 +23,7 @@ This project is a monolith developed in **PHP Laravel** using the **Breeze Start
    - Save preferences or order history for regular customers.
 
 4. **Product Management:**
-   - Create and manage available products:
+   - Create products:
      - Cakes, desserts, and more.
      - Ingredients, sizes, and prices.
    - Display products in an interactive catalog.
