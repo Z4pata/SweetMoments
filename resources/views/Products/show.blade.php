@@ -32,10 +32,14 @@
                     </div>
 
                     <div class="mt-8 flex justify-between items-center">
-                        <a href="{{ route('products.edit', $product->id) }}"
-                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                            Order now ->
-                        </a>
+                        <form action=" {{ route('orders.store') }}" method="POST">
+                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+                            @csrf
+                            <button type="submit"
+                                class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                                Order now ->
+                            </button>
+                        </form>
 
 
                         {{-- Mas adelante con Delete --}}

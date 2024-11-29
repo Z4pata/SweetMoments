@@ -8,4 +8,5 @@ enum statuses: string
     case InProgress = 'in-progress';
     case Delivered = 'delivered';
     case Canceled = 'canceled';
+    case NewOrder = 'new-order';
 }

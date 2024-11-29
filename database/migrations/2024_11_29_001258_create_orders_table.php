@@ -19,8 +19,8 @@ return new class extends Migration
             $table->id();
             $table->string('priority')->default(priorities::Low->value);
             $table->string('status')->default(statuses::Pending->value);
-            $table->foreignId('product_id');
-            $table->foreignId('user_id');
+            $table->foreignId('product_id')->constrained('products');
+            $table->foreignId('user_id')->constrained('users');
             $table->dateTime('delivered_date')->nullable();
             $table->timestamps();
         });
