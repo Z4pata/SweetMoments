@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\ingredient;
+use App\Models\Ingredient;
 use Illuminate\Database\Seeder;
 
 class IngredientSeeder extends Seeder
