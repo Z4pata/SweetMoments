@@ -52,4 +52,7 @@ jobs:
               run: php artisan migrate --env=testing
             
             - name: Run tests
-              run: npm run build && php artisan test
+              run: npm run build
+            
+            - name: Run PHPUnit tests
+              run: vendor/bin/phpunit --env=testing --configuration phpunit.xml
