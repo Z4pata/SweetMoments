@@ -47,6 +47,9 @@ jobs:
 
             - name: Generate key
               run: php artisan key:generate
+
+            - name: Run migrations
+              run: php artisan migrate -env=testing
             
             - name: Run tests
               run: npm run build && php artisan test
