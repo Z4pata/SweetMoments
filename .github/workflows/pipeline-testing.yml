@@ -81,9 +81,15 @@ jobs:
           - name: Build assets with Vite
             run: npm run build
 
+          - name: Deploy to Hostinger server
+            run: |
+              rsync -avz -e "ssh -p 65002" --exclude='.git' --exclude='node_modules' --exclude='.env' ./ u976542190@88.223.85.92:/home/u976542190/domains/sweetmomments-juanjozapata.jcomtec.com
+              ssh -p 65002 u976542190@88.223.85.92 'cd /home/u976542190/domains/sweetmomments-juanjozapata.jcomtec.com && composer2 install --no-dev'
+
           - name: Create .env file on server
             run: |
               ssh -p 65002 u976542190@88.223.85.92 'cp /home/u976542190/domains/sweetmomments-juanjozapata.jcomtec.com/.env.example /home/u976542190/domains/sweetmomments-juanjozapata.jcomtec.com/.env'
+          
           - name: Update .env file on server
             run: |
               ssh -p 65002 u976542190@88.223.85.92 'sed -i "s|^APP_NAME=.*|APP_NAME=${{ secrets.APP_NAME }}|" /home/u976542190/domains/sweetmomments-juanjozapata.jcomtec.com/.env'
